@@ -31,7 +31,6 @@ const mostrarBotaoCopiar = () => {
 };
 
 const criptografar = (texto) => {
-    texto = ajustarTexto(texto);
     mapaCaracteres.forEach((caractere) => {
         texto = texto.replaceAll(caractere[0],caractere[1]);
     });  
@@ -39,7 +38,6 @@ const criptografar = (texto) => {
 };
 
 const descriptografar = (texto) => {
-    texto = ajustarTexto(texto);
     mapaCaracteres.forEach((caractere) => {
         texto = texto.replaceAll(caractere[1],caractere[0]);
     }); 
@@ -49,14 +47,14 @@ const descriptografar = (texto) => {
 ocultarBotaoCopiar();
 
 botaoCriptografar.addEventListener('click', () => {
+    textoEntrada.value = ajustarTexto(textoEntrada.value);
     textoSaida.value = criptografar(textoEntrada.value);
-    textoEntrada.value = '';
     mostrarBotaoCopiar();
 });
 
 botaoDescriptografar.addEventListener('click', () => {
+    textoEntrada.value = ajustarTexto(textoEntrada.value);
     textoSaida.value = descriptografar(textoEntrada.value);
-    textoEntrada.value = '';
     mostrarBotaoCopiar();
 });
 
