@@ -47,13 +47,13 @@ const descriptografar = (texto) => {
 ocultarBotaoCopiar();
 
 botaoCriptografar.addEventListener('click', () => {
-    textoEntrada.value = ajustarTexto(textoEntrada.value);
+    textoEntrada.value = ajustarTexto(textoEntrada.value.toLowerCase());
     textoSaida.value = criptografar(textoEntrada.value);
     mostrarBotaoCopiar();
 });
 
 botaoDescriptografar.addEventListener('click', () => {
-    textoEntrada.value = ajustarTexto(textoEntrada.value);
+    textoEntrada.value = ajustarTexto(textoEntrada.value.toLowerCase());
     textoSaida.value = descriptografar(textoEntrada.value);
     mostrarBotaoCopiar();
 });
